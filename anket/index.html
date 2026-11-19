@@ -12,17 +12,21 @@
   Anahtar yayımlanabilir (publishable) anahtardır; gizli değildir.
 -->
 <style>
-  :root { --zemin:#1b0f14; --kutu:#2d1620; --yazi:#f4ece8; --soluk:#c9b8b2; --vurgu:#d4b07a; --vurguyazi:#2a1a10; --urun:#f3f2ef; }
-  @media (prefers-color-scheme: light) { :root { --zemin:#f6efe6; --kutu:#ffffff; --yazi:#2a1a10; --soluk:#6d5a52; --vurgu:#7a1f33; --vurguyazi:#ffffff; } }
+  /* Renkler uygulamanın üç temasından gelir (?t=gece|editoryal|butik); aşağıdaki değerler Gece (varsayılan) */
+  :root { --zemin:#12100D; --kutu:#3A0B18; --ust:#3A0B18; --yazi:#F3EBDD; --soluk:#A69A87; --vurgu:#CDA86B; --vurguyazi:#17120B; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--zemin); color:var(--yazi); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height:1.5; }
   main { max-width:560px; margin:0 auto; padding:24px 16px 40px; }
   h1 { font-size:24px; margin:8px 0 18px; text-align:center; }
-  .kombin { background:var(--kutu); border-radius:20px; padding:14px; margin-bottom:16px; }
-  .etiket { font-weight:700; letter-spacing:.08em; color:var(--vurgu); margin:0 0 10px; }
-  .izgara { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:12px; }
-  .izgara div { background:var(--urun); border-radius:12px; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-  .izgara img { max-width:100%; max-height:100%; object-fit:contain; }
+  /* Kombin kutusu: uygulamadaki gibi bordo (dikey gradyan), parçaların arkasında kutu/zemin YOK */
+  .kombin { background:linear-gradient(180deg, var(--ust), var(--kutu)); border-radius:24px; padding:18px 14px 16px; margin-bottom:16px; }
+  .etiket { font-weight:700; letter-spacing:.08em; color:var(--vurgu); margin:0 0 10px 6px; }
+  .ana { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-bottom:6px; }
+  .ana.bir { grid-template-columns:1fr; max-width:60%; margin:0 auto 6px; }
+  .ana div { aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; }
+  .kucuk { display:flex; gap:4px; justify-content:center; margin-bottom:14px; }
+  .kucuk div { width:24%; aspect-ratio:1; display:flex; align-items:center; justify-content:center; }
+  .ana img, .kucuk img { max-width:100%; max-height:100%; object-fit:contain; }
   button { width:100%; border:0; border-radius:999px; padding:14px; font-size:16px; font-weight:700; background:var(--vurgu); color:var(--vurguyazi); cursor:pointer; }
   button:disabled { opacity:.5; }
   .mesaj { text-align:center; font-size:18px; padding:24px 8px; }
@@ -59,6 +63,14 @@
   var q = new URLSearchParams(location.search);
   var dil = (q.get('dil') || navigator.language || 'en').toLowerCase().split('-')[0];
   var T = D[dil] || D.en;
+  // Tema: link ?t=gece|editoryal|butik taşır (uygulama kullanıcının temasını ekler); bilinmiyorsa Gece
+  var TEMALAR = {
+    gece: { zemin: '#12100D', kutu: '#3A0B18', ust: '#3A0B18', yazi: '#F3EBDD', soluk: '#A69A87', vurgu: '#CDA86B', vurguyazi: '#17120B' },
+    editoryal: { zemin: '#EFE5D2', kutu: '#5A4432', ust: '#7A6248', yazi: '#33271D', soluk: '#5A4432', vurgu: '#D8B98A', vurguyazi: '#33271D' },
+    butik: { zemin: '#F3E4E0', kutu: '#4F3536', ust: '#6E4F50', yazi: '#2E1E20', soluk: '#6E4F50', vurgu: '#C9A39C', vurguyazi: '#2E1E20' }
+  };
+  var tema = TEMALAR[q.get('t')] || TEMALAR.gece;
+  Object.keys(tema).forEach(function (k) { document.documentElement.style.setProperty('--' + k, tema[k]); });
   document.documentElement.lang = D[dil] ? dil : 'en';
   if (dil === 'ar') document.documentElement.dir = 'rtl';
   var kod = q.get('k') || '';
@@ -70,12 +82,21 @@
   function cagir(yol, govde) {
     return fetch(SB + yol, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: KEY }, body: JSON.stringify(govde), credentials: 'omit', referrerPolicy: 'no-referrer' });
   }
+  var ANA = ['dis_giyim', 'ust', 'elbise', 'alt']; // büyük gösterilenler; ayakkabı ve aksesuar küçük şeritte (uygulamadaki kombin kutusu gibi)
+  function resim(p) {
+    var d = document.createElement('div'); var i = document.createElement('img');
+    i.src = p.u; i.alt = ''; i.referrerPolicy = 'no-referrer'; d.appendChild(i); return d;
+  }
   function kombin(harf, gorseller, oyVer) {
     var kutu = document.createElement('section'); kutu.className = 'kombin';
     var e = document.createElement('p'); e.className = 'etiket'; e.textContent = harf; kutu.appendChild(e);
-    var g = document.createElement('div'); g.className = 'izgara';
-    gorseller.forEach(function (u) { var d = document.createElement('div'); var i = document.createElement('img'); i.src = u; i.alt = ''; i.referrerPolicy = 'no-referrer'; d.appendChild(i); g.appendChild(d); });
-    kutu.appendChild(g);
+    var liste = gorseller.map(function (g) { return typeof g === 'string' ? { u: g, t: 'ust' } : g; });
+    var ana = liste.filter(function (p) { return ANA.indexOf(p.t) !== -1; });
+    var kucuk = liste.filter(function (p) { return ANA.indexOf(p.t) === -1; });
+    if (!ana.length) { ana = kucuk; kucuk = []; }
+    var ag = document.createElement('div'); ag.className = 'ana' + (ana.length === 1 ? ' bir' : '');
+    ana.forEach(function (p) { ag.appendChild(resim(p)); }); kutu.appendChild(ag);
+    if (kucuk.length) { var kg = document.createElement('div'); kg.className = 'kucuk'; kucuk.forEach(function (p) { kg.appendChild(resim(p)); }); kutu.appendChild(kg); }
     var b = document.createElement('button'); b.textContent = T[1] + ' (' + harf + ')'; b.onclick = function () { oyVer(harf); }; kutu.appendChild(b);
     return kutu;
   }
