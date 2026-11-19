@@ -3,103 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<meta name="referrer" content="no-referrer">
-<title>Meaculta</title>
-<!--
-  ARKADAŞA SOR anket sayfası (ARKADASA_SOR.md). Çerez, localStorage, sessionStorage, analitik, dış yazı tipi YOK.
-  Yayın: gizlilik-web ile aynı GitHub Pages deposunda /anket/index.html olarak yüklenir (meaculta-app.github.io/anket/?k=KOD).
-  Anahtar yayımlanabilir (publishable) anahtardır; gizli değildir.
--->
+<title>Meaculta - Gizlilik politikası / Privacy policy</title>
 <style>
-  :root { --zemin:#1b0f14; --kutu:#2d1620; --yazi:#f4ece8; --soluk:#c9b8b2; --vurgu:#d4b07a; --vurguyazi:#2a1a10; --urun:#f3f2ef; }
-  @media (prefers-color-scheme: light) { :root { --zemin:#f6efe6; --kutu:#ffffff; --yazi:#2a1a10; --soluk:#6d5a52; --vurgu:#7a1f33; --vurguyazi:#ffffff; } }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--zemin); color:var(--yazi); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height:1.5; }
-  main { max-width:560px; margin:0 auto; padding:24px 16px 40px; }
-  h1 { font-size:24px; margin:8px 0 18px; text-align:center; }
-  .kombin { background:var(--kutu); border-radius:20px; padding:14px; margin-bottom:16px; }
-  .etiket { font-weight:700; letter-spacing:.08em; color:var(--vurgu); margin:0 0 10px; }
-  .izgara { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:12px; }
-  .izgara div { background:var(--urun); border-radius:12px; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-  .izgara img { max-width:100%; max-height:100%; object-fit:contain; }
-  button { width:100%; border:0; border-radius:999px; padding:14px; font-size:16px; font-weight:700; background:var(--vurgu); color:var(--vurguyazi); cursor:pointer; }
-  button:disabled { opacity:.5; }
-  .mesaj { text-align:center; font-size:18px; padding:24px 8px; }
-  .not { color:var(--soluk); font-size:13px; text-align:center; margin-top:20px; }
+  :root { --bg:#fbfaf7; --metin:#1d1d1f; --soluk:#6b6b70; --cizgi:#e5e3dd; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#121214; --metin:#f2f2f4; --soluk:#9a9aa2; --cizgi:#2a2a30; }
+  }
+  :root[data-theme="dark"] { --bg:#121214; --metin:#f2f2f4; --soluk:#9a9aa2; --cizgi:#2a2a30; }
+  body { margin:0; background:var(--bg); color:var(--metin); font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
+  main { max-width:720px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  h2 { font-size:18px; margin:28px 0 8px; }
+  h2 + p, h2 + ul { margin-top:0; }
+  p, li { font-size:16px; }
+  ul { padding-left:20px; }
+  .tarih { color:var(--soluk); font-size:14px; }
+  .ayrac { border:0; border-top:1px solid var(--cizgi); margin:40px 0; }
+  .dil { color:var(--soluk); font-size:14px; margin-top:0; }
+  a { color:inherit; }
 </style>
 </head>
 <body>
 <main>
-  <h1 id="baslik"></h1>
-  <div id="icerik"></div>
-  <p class="not" id="not"></p>
+
+<section lang="tr">
+  <h1>Gizlilik politikası</h1>
+  <p class="tarih">Son güncelleme: 19 Kasım 2026</p>
+
+  <h2>Kısaca</h2>
+  <p>Meaculta, gardırobundaki kıyafetlerden hava durumuna uygun kombin önerir. Fotoğraflarını ve verilerini yalnızca bu hizmeti sunmak için kullanırız. Verilerini satmayız, reklam için kullanmayız.</p>
+
+  <h2>Hangi verileri topluyoruz</h2>
+  <ul>
+    <li>Hesap: e-posta adresin ve (Google ile girersen) Google hesabının adı ve e-postası.</li>
+    <li>Kıyafet fotoğrafları ve etiketleri: yüklediğin fotoğraflar, yapay zekânın çıkardığı tür, renk, desen, kalınlık, resmiyet ve mevsim bilgisi, senin yaptığın düzeltmeler.</li>
+    <li>Kullanım: oluşturduğun planlar, kombinler, beğen / beğenme / giydim / hiç giymem tepkilerin; seçtiğin dil, tema, şehir ve stil tercihlerin; istersen adın, kullanıcı adın (yalnızca sen görürsün, başkalarına gösterilmez), doğum tarihin, boyun, kilon (hepsi isteğe bağlıdır) ve profil fotoğrafın (profil fotoğrafı da diğer fotoğrafların gibi özel depoda durur, yalnızca sen görebilirsin).</li>
+    <li>Konum: cihazının konumunu istemeyiz. Hava durumu için yalnızca senin seçtiğin şehir kullanılır.</li>
+    <li>Bildirim: sabah bildirimi telefonunda yerel olarak planlanır; bunun için sunucuya bilgi gönderilmez.</li>
+  </ul>
+
+  <h2>Verileri nasıl kullanıyoruz</h2>
+  <ul>
+    <li>Kıyafetlerini tanımak, hava durumuna uygun ve tekrarsız kombin üretmek, kombinlerin neden seçildiğini açıklamak ve beğenilerinden öğrenerek önerileri iyileştirmek için.</li>
+    <li>Hizmetin güvenliği ve kötüye kullanımın önlenmesi (ör. günlük yapay zekâ çağrı sınırı) için.</li>
+  </ul>
+
+  <h2>Verilerini kimlerle paylaşıyoruz</h2>
+  <ul>
+    <li>Hizmeti sunmak için güvendiğimiz hizmet sağlayıcılar kullanırız: Supabase (hesap, veritabanı ve fotoğraf depolama; Frankfurt, Almanya), Anthropic (kıyafet etiketleme ve kombin seçimi için yapay zekâ), Photoroom (fotoğraf arka planı temizleme), Open-Meteo (hava durumu; yalnızca şehir koordinatı gönderilir) ve Unsplash (ilham görselleri).</li>
+    <li>Yapay zekâ ve arka plan temizleme hizmetlerine yalnızca ilgili kıyafet fotoğrafı ve gerekli etiketler gönderilir; adın ve e-postan gönderilmez. "Fotoğraftan parça ekle" özelliğinde (ayna ya da yatağa/rafa serili parça fotoğrafları) seçtiğin fotoğraflar yalnızca parçaları tanımak için yapay zekâya gönderilir ve saklanmaz; hesabına yalnızca kırpılan kıyafet parçaları eklenir.</li>
+    <li>Bu sağlayıcılar verini yalnızca bize hizmet vermek için işler. Verilerini satmayız.</li>
+  </ul>
+
+  <h2>Fotoğraflarının gizliliği</h2>
+  <p>Fotoğrafların özeldir. Yalnızca sen görebilirsin; her kullanıcı yalnızca kendi verisine erişir. Tek istisna, senin başlattığın "Arkadaşa sor" özelliğidir (aşağıya bak).</p>
+
+  <h2>Arkadaşa sor</h2>
+  <ul>
+    <li>İki kombini bir arkadaşına oylatmak için bir bağlantı oluşturabilirsin. Bağlantıyı bilen herkes, bu iki kombinin içindeki parçaların görsellerini 1 saat boyunca görebilir ve "A" ya da "B" oyu verebilir. Paylaşmadan önce açık onayını isteriz. Aynada çektiğin fotoğraflar bu özellikle paylaşılmaz.</li>
+    <li>Oy verenden ad, e-posta, IP adresi ya da başka bir kimlik bilgisi toplamayız ve tarayıcısına çerez bırakmayız; yalnızca verilen oy (A ya da B) ve zamanı saklanır.</li>
+    <li>Bağlantı, görseller ve oylar 1 saat sonra silinir. Barındırma sağlayıcılarımız (Supabase, GitHub Pages) güvenlik amacıyla kendi teknik kayıtlarını tutabilir; bu kayıtları biz kullanmayız.</li>
+  </ul>
+
+  <h2>Verilerini ne kadar saklıyoruz, nasıl silersin</h2>
+  <ul>
+    <li>Verilerini hesabın açık olduğu sürece saklarız. Bir kıyafeti uygulamadan silersen fotoğrafı da silinir.</li>
+    <li>Hesabını ve tüm verilerini Profil ekranındaki "Hesabımı sil" düğmesiyle istediğin an silebilirsin; silme geri alınamaz ve fotoğraflarınla birlikte hemen gerçekleşir.</li>
+    <li>Uygulamaya erişemiyorsan <a href="mailto:destek@meaculta.app">destek@meaculta.app</a> adresine yazarak hesabının ve verilerinin silinmesini isteyebilirsin; en geç 30 gün içinde sileriz.</li>
+  </ul>
+
+  <h2>Haklarım</h2>
+  <p>Verilerine erişme, düzeltme, silme ve işlenmesine itiraz etme hakkın vardır (KVKK ve GDPR dahil, yaşadığın yerin yasalarına göre). Bu haklar için aşağıdaki adrese yazabilirsin.</p>
+
+  <h2>Çocuklar</h2>
+  <p>Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bilerek onların verisini toplamayız.</p>
+
+  <h2>Değişiklikler</h2>
+  <p>Bu politikayı güncellersek yeni halini uygulamada yayımlar, tarihini değiştiririz.</p>
+
+  <h2>İletişim</h2>
+  <p><a href="mailto:destek@meaculta.app">destek@meaculta.app</a></p>
+</section>
+
+<hr class="ayrac">
+
+<section lang="en">
+  <h1>Privacy policy</h1>
+  <p class="tarih">Last updated: November 19, 2026</p>
+
+  <h2>In short</h2>
+  <p>Meaculta suggests weather-appropriate outfits from the clothes in your wardrobe. We use your photos and data only to provide this service. We do not sell your data or use it for advertising.</p>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li>Account: your email address and, if you sign in with Google, your Google account name and email.</li>
+    <li>Clothing photos and tags: the photos you upload, the type, color, pattern, thickness, formality and season that the AI detects, and the corrections you make.</li>
+    <li>Usage: the plans and outfits you create, your like / dislike / worn / never-wear feedback; your language, theme, city and style preferences; and your name, username (visible only to you, never shown to others), date of birth, height, weight (all optional) and profile photo if you choose to add them (the profile photo is kept in the same private storage as your other photos and only you can see it).</li>
+    <li>Location: we do not ask for your device location. Weather uses only the city you choose.</li>
+    <li>Notifications: the morning notification is scheduled locally on your phone; no information is sent to a server for it.</li>
+  </ul>
+
+  <h2>How we use your data</h2>
+  <ul>
+    <li>To recognize your clothes, build weather-appropriate outfits without repeats, explain why outfits were chosen, and improve suggestions by learning from your feedback.</li>
+    <li>To keep the service secure and prevent abuse (for example, a daily limit on AI requests).</li>
+  </ul>
+
+  <h2>Who we share it with</h2>
+  <ul>
+    <li>We use trusted service providers to run the app: Supabase (account, database and photo storage; Frankfurt, Germany), Anthropic (AI for tagging clothes and choosing outfits), Photoroom (photo background removal), Open-Meteo (weather; only the city coordinates are sent) and Unsplash (inspiration images).</li>
+    <li>Only the relevant clothing photo and the necessary tags are sent to the AI and background-removal services; your name and email are not sent. With the "Add pieces from photos" feature (mirror photos or photos of pieces laid out on a bed or shelf), the photos you choose are sent to the AI only to recognise the clothing and are not stored; only the cropped clothing pieces are added to your account.</li>
+    <li>These providers process data only to serve us. We do not sell your data.</li>
+  </ul>
+
+  <h2>Privacy of your photos</h2>
+  <p>Your photos are private. Only you can see them; each user can access only their own data. The only exception is the "Ask a friend" feature, which you start yourself (see below).</p>
+
+  <h2>Ask a friend</h2>
+  <ul>
+    <li>You can create a link so a friend can vote between two outfits. Anyone with the link can see the images of the pieces in those two outfits for 1 hour and vote "A" or "B". We ask for your explicit confirmation before sharing. Photos you take in the mirror are never shared by this feature.</li>
+    <li>We do not collect a name, email, IP address or any other identifier from voters and we set no cookies in their browser; only the vote (A or B) and its time are stored.</li>
+    <li>The link, images and votes are deleted after 1 hour. Our hosting providers (Supabase, GitHub Pages) may keep their own technical logs for security; we do not use them.</li>
+  </ul>
+
+  <h2>Retention and deletion</h2>
+  <ul>
+    <li>We keep your data while your account is active. If you delete a garment in the app, its photo is deleted too.</li>
+    <li>You can delete your account and all your data at any time with the "Delete my account" button on the Profile screen; deletion is permanent and removes your photos immediately.</li>
+    <li>If you cannot access the app, email <a href="mailto:destek@meaculta.app">destek@meaculta.app</a> to request deletion of your account and data; we will delete it within 30 days at the latest.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>You have the right to access, correct, delete and object to the processing of your data (including under GDPR and local laws). To exercise these rights, write to the address below.</p>
+
+  <h2>Children</h2>
+  <p>The app is not directed to children under 13 and we do not knowingly collect their data.</p>
+
+  <h2>Changes</h2>
+  <p>If we update this policy, we will publish the new version in the app and change the date.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:destek@meaculta.app">destek@meaculta.app</a></p>
+</section>
+
 </main>
-<script>
-  // Bu sayfa çerez/yerel depolama KULLANMAZ; oy yalnız bellekte tutulan durumla bir kez gönderilir.
-  var SB = 'https://unqdrpjiljdlzzcxbxal.supabase.co/functions/v1/';
-  var KEY = 'sb_publishable_yPAm-vbJ2AUGAvfXA_IfYg_78glGrdu';
-  var D = {
-    tr: ['Sence hangisi daha iyi?','Bunu seç','Teşekkürler! Oyun iletildi.','Bu anketin süresi doldu.','Oyun anonimdir: ad, e-posta, IP adresi ya da çerez toplanmaz. Anket ve görseller 1 saat sonra silinir.','Anket açılamadı. Bağlantıyı kontrol et.'],
-    en: ['Which one looks better?','Pick this one','Thanks! Your vote was sent.','This poll has expired.','Your vote is anonymous: no name, email, IP address or cookies are collected. The poll and images are deleted after 1 hour.','Couldn’t open the poll. Check the link.'],
-    de: ['Welches Outfit gefällt dir besser?','Dieses wählen','Danke! Deine Stimme wurde gesendet.','Diese Umfrage ist abgelaufen.','Deine Stimme ist anonym: Es werden kein Name, keine E-Mail, keine IP-Adresse und keine Cookies erfasst. Umfrage und Bilder werden nach 1 Stunde gelöscht.','Umfrage konnte nicht geöffnet werden. Prüfe den Link.'],
-    es: ['¿Cuál te gusta más?','Elegir este','¡Gracias! Tu voto se ha enviado.','Esta encuesta ha caducado.','Tu voto es anónimo: no se recoge nombre, correo, dirección IP ni cookies. La encuesta y las imágenes se eliminan tras 1 hora.','No se pudo abrir la encuesta. Revisa el enlace.'],
-    fr: ['Lequel préférez-vous ?','Choisir celui-ci','Merci ! Votre vote a été envoyé.','Ce sondage a expiré.','Votre vote est anonyme : aucun nom, e-mail, adresse IP ni cookie n’est collecté. Le sondage et les images sont supprimés après 1 heure.','Impossible d’ouvrir le sondage. Vérifiez le lien.'],
-    it: ['Quale ti piace di più?','Scegli questo','Grazie! Il tuo voto è stato inviato.','Questo sondaggio è scaduto.','Il tuo voto è anonimo: non raccogliamo nome, e-mail, indirizzo IP né cookie. Sondaggio e immagini vengono eliminati dopo 1 ora.','Impossibile aprire il sondaggio. Controlla il link.'],
-    pt: ['Qual você prefere?','Escolher este','Obrigado! Seu voto foi enviado.','Esta enquete expirou.','Seu voto é anônimo: não coletamos nome, e-mail, endereço IP nem cookies. A enquete e as imagens são apagadas após 1 hora.','Não foi possível abrir a enquete. Verifique o link.'],
-    ru: ['Какой образ лучше?','Выбрать этот','Спасибо! Ваш голос отправлен.','Срок этого опроса истёк.','Ваш голос анонимен: имя, e-mail, IP-адрес и cookie не собираются. Опрос и изображения удаляются через 1 час.','Не удалось открыть опрос. Проверьте ссылку.'],
-    ar: ['أي إطلالة تبدو أفضل؟','اختر هذه','شكرًا! تم إرسال صوتك.','انتهت صلاحية هذا الاستطلاع.','صوتك مجهول: لا نجمع اسمًا ولا بريدًا إلكترونيًا ولا عنوان IP ولا ملفات تعريف ارتباط. يُحذف الاستطلاع والصور بعد ساعة واحدة.','تعذّر فتح الاستطلاع. تحقق من الرابط.'],
-    hi: ['कौन-सा बेहतर लगता है?','यह चुनें','धन्यवाद! आपका वोट भेज दिया गया।','इस पोल की अवधि समाप्त हो गई है।','आपका वोट गुमनाम है: नाम, ईमेल, आईपी पता या कुकी एकत्र नहीं होती। पोल और तस्वीरें 1 घंटे बाद हटा दी जाती हैं।','पोल नहीं खुल सका। लिंक जाँचें।'],
-    id: ['Mana yang lebih bagus?','Pilih ini','Terima kasih! Suaramu terkirim.','Polling ini sudah berakhir.','Suaramu anonim: tidak ada nama, email, alamat IP, atau cookie yang dikumpulkan. Polling dan gambar dihapus setelah 1 jam.','Polling tidak dapat dibuka. Periksa tautannya.'],
-    ja: ['どちらが良いと思う？','こちらを選ぶ','ありがとう！投票を送信しました。','このアンケートは終了しました。','投票は匿名です。名前、メール、IPアドレス、Cookieは収集しません。アンケートと画像は1時間後に削除されます。','アンケートを開けませんでした。リンクを確認してください。'],
-    ko: ['어느 쪽이 더 좋아요?','이걸로 선택','고마워요! 투표가 전송됐어요.','이 투표는 종료되었어요.','투표는 익명입니다. 이름, 이메일, IP 주소, 쿠키를 수집하지 않아요. 투표와 이미지는 1시간 후 삭제돼요.','투표를 열 수 없어요. 링크를 확인해 주세요.'],
-    zh: ['你觉得哪套更好？','选这套','谢谢！你的投票已发送。','此投票已过期。','你的投票是匿名的：不收集姓名、邮箱、IP 地址或 Cookie。投票和图片将在 1 小时后删除。','无法打开投票，请检查链接。'],
-    pl: ['Która wygląda lepiej?','Wybierz tę','Dziękujemy! Twój głos został wysłany.','Ta ankieta wygasła.','Twój głos jest anonimowy: nie zbieramy imienia, e-maila, adresu IP ani plików cookie. Ankieta i obrazy są usuwane po 1 godzinie.','Nie udało się otworzyć ankiety. Sprawdź link.']
-  };
-  var q = new URLSearchParams(location.search);
-  var dil = (q.get('dil') || navigator.language || 'en').toLowerCase().split('-')[0];
-  var T = D[dil] || D.en;
-  document.documentElement.lang = D[dil] ? dil : 'en';
-  if (dil === 'ar') document.documentElement.dir = 'rtl';
-  var kod = q.get('k') || '';
-  var icerik = document.getElementById('icerik');
-  document.getElementById('baslik').textContent = T[0];
-  document.getElementById('not').textContent = T[4];
-
-  function mesaj(metin) { icerik.innerHTML = ''; var p = document.createElement('p'); p.className = 'mesaj'; p.textContent = metin; icerik.appendChild(p); document.getElementById('baslik').textContent = ''; }
-  function cagir(yol, govde) {
-    return fetch(SB + yol, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: KEY }, body: JSON.stringify(govde), credentials: 'omit', referrerPolicy: 'no-referrer' });
-  }
-  function kombin(harf, gorseller, oyVer) {
-    var kutu = document.createElement('section'); kutu.className = 'kombin';
-    var e = document.createElement('p'); e.className = 'etiket'; e.textContent = harf; kutu.appendChild(e);
-    var g = document.createElement('div'); g.className = 'izgara';
-    gorseller.forEach(function (u) { var d = document.createElement('div'); var i = document.createElement('img'); i.src = u; i.alt = ''; i.referrerPolicy = 'no-referrer'; d.appendChild(i); g.appendChild(d); });
-    kutu.appendChild(g);
-    var b = document.createElement('button'); b.textContent = T[1] + ' (' + harf + ')'; b.onclick = function () { oyVer(harf); }; kutu.appendChild(b);
-    return kutu;
-  }
-
-  if (!/^[A-Za-z0-9_-]{16,64}$/.test(kod)) { mesaj(T[3]); }
-  else {
-    cagir('anket-goster', { kod: kod }).then(function (r) {
-      if (r.status === 404) { mesaj(T[3]); return null; }
-      if (!r.ok) { mesaj(T[5]); return null; }
-      return r.json();
-    }).then(function (veri) {
-      if (!veri) return;
-      var oyVerildi = false;
-      function oyVer(secim) {
-        if (oyVerildi) return; oyVerildi = true;
-        Array.prototype.forEach.call(document.querySelectorAll('button'), function (b) { b.disabled = true; });
-        cagir('anket-oy', { kod: kod, secim: secim }).then(function (r) {
-          if (r.ok) mesaj(T[2]); else if (r.status === 404) mesaj(T[3]); else mesaj(T[5]);
-        }).catch(function () { mesaj(T[5]); });
-      }
-      icerik.appendChild(kombin('A', veri.a, oyVer));
-      icerik.appendChild(kombin('B', veri.b, oyVer));
-    }).catch(function () { mesaj(T[5]); });
-  }
-</script>
 </body>
 </html>
