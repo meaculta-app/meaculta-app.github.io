@@ -117,8 +117,8 @@
           if (r.ok) mesaj(T[2]); else if (r.status === 404) mesaj(T[3]); else mesaj(T[5]);
         }).catch(function () { mesaj(T[5]); });
       }
-      icerik.appendChild(kombin('A', veri.a, oyVer));
-      icerik.appendChild(kombin('B', veri.b, oyVer));
+      var secenekler = veri.secenekler || [veri.a, veri.b]; // 2-4 kombin (eski anketlerde a/b)
+      secenekler.forEach(function (g, i) { icerik.appendChild(kombin('ABCD'.charAt(i), g, oyVer)); });
     }).catch(function () { mesaj(T[5]); });
   }
 </script>
